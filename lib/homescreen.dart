@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tmdb_app/api_class/api.dart';
+import 'package:tmdb_app/models/movie_model.dart';
 import 'package:tmdb_app/widgets/carousel.dart';
 import 'package:tmdb_app/widgets/movie_cards.dart';
 
@@ -11,6 +13,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late Future<List<Movie>> trendingMovies;
+  @override
+  void initState() {
+    super.initState();
+    trendingMovies = MovieApi().getTrendingMovies();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
