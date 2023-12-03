@@ -13,17 +13,22 @@ class CarouselImages extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: CarouselSlider.builder(
-        itemCount: 10,
+        itemCount: snapshot.data.length,
         itemBuilder: (context, index, pageViewIndex) {
-          return ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Container(
-              height: 300,
-              width: 200,
-              child: Image.network(
-                '${Constants.imagePath}${snapshot.data[index].posterPath}',
-                filterQuality: FilterQuality.high,
-                fit: BoxFit.cover,
+          return GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>))
+            },
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: SizedBox(
+                height: 300,
+                width: 200,
+                child: Image.network(
+                  '${Constants.imagePath}${snapshot.data[index].posterPath}',
+                  filterQuality: FilterQuality.high,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           );

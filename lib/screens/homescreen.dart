@@ -14,10 +14,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late Future<List<Movie>> trendingMovies;
+  late Future<List<Movie>> topRated;
+  late Future<List<Movie>> upcoming;
   @override
   void initState() {
     super.initState();
     trendingMovies = MovieApi().getTrendingMovies();
+    topRated = MovieApi().getTopratedMovies();
+    topRated = MovieApi().getUpcomingMovies();
   }
 
   @override
@@ -70,18 +74,58 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 32,
               ),
-              const MovieCards(
-                title: 'Top rated movies',
+              Text(
+                'Toprated movies',
+                style: GoogleFonts.aBeeZee(fontSize: 20),
               ),
-              const MovieCards(
-                title: 'Upcoming movies',
+              const SizedBox(
+                height: 10,
               ),
-              const MovieCards(
-                title: 'Drama',
+              SizedBox(
+                  child: FutureBuilder(
+                future: topRated,
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text(
+                        snapshot.error.toString(),
+                      ),
+                    );
+                  } else if (snapshot.hasData) {
+                    return MovieCards(
+                      snapshot: snapshot,
+                    );
+                  } else {
+                    return Center(child: CircularProgressIndicator());
+                  }
+                },
+              )),
+              Text(
+                'Upcoming movies',
+                style: GoogleFonts.aBeeZee(fontSize: 20),
               ),
-              const MovieCards(
-                title: 'Comedy',
+              const SizedBox(
+                height: 10,
               ),
+              SizedBox(
+                  child: FutureBuilder(
+                future: upcoming,
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text(
+                        snapshot.error.toString(),
+                      ),
+                    );
+                  } else if (snapshot.hasData) {
+                    return MovieCards(
+                      snapshot: snapshot,
+                    );
+                  } else {
+                    return Center(child: CircularProgressIndicator());
+                  }
+                },
+              )),
             ],
           ),
         ),
