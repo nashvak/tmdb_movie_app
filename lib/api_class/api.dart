@@ -1,12 +1,11 @@
 import 'dart:convert';
-
+import 'package:tmdb_app/constants/constants.dart';
 import 'package:tmdb_app/models/movie_model.dart';
 import 'package:http/http.dart' as http;
 
 class MovieApi {
-  static const API_KEY = "9ef722807f4bbe265b99f7c183ead2fa";
   static const trendingUrl =
-      'https://api.themoviedb.org/3/trending/movie/day?api_key=$API_KEY';
+      'https://api.themoviedb.org/3/trending/movie/day?api_key=${Constants.API_KEY}';
   Future<List<Movie>> getTrendingMovies() async {
     final response = await http.get(Uri.parse(trendingUrl));
     if (response.statusCode == 200) {

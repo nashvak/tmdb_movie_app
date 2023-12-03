@@ -1,24 +1,30 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:tmdb_app/constants/constants.dart';
 
 class CarouselImages extends StatelessWidget {
   const CarouselImages({
     super.key,
+    required this.snapshot,
   });
-
+  final AsyncSnapshot snapshot;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       child: CarouselSlider.builder(
         itemCount: 10,
-        itemBuilder: (context, itemIndex, pageViewIndex) {
+        itemBuilder: (context, index, pageViewIndex) {
           return ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Container(
               height: 300,
               width: 200,
-              color: Colors.red,
+              child: Image.network(
+                '${Constants.imagePath}${snapshot.data[index].posterPath}',
+                filterQuality: FilterQuality.high,
+                fit: BoxFit.cover,
+              ),
             ),
           );
         },
