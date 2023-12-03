@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:tmdb_app/constants/constants.dart';
+import 'package:tmdb_app/screens/details_screen.dart';
 
 class CarouselImages extends StatelessWidget {
   const CarouselImages({
@@ -16,8 +17,15 @@ class CarouselImages extends StatelessWidget {
         itemCount: snapshot.data.length,
         itemBuilder: (context, index, pageViewIndex) {
           return GestureDetector(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>))
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(
+                    movie: snapshot.data[index],
+                  ),
+                ),
+              );
             },
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),

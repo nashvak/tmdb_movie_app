@@ -5,7 +5,7 @@ class Movie {
   final String overview;
   final String posterPath;
   final String releaseDate;
-  final String voteAverage;
+  final double voteAverage;
   Movie(
       {required this.title,
       required this.backdropPath,
@@ -21,7 +21,7 @@ class Movie {
       overview: json["overview"],
       posterPath: json["poster_path"],
       releaseDate: json["release_date"],
-      voteAverage: json["vote_average"].toString(),
+      voteAverage: json["vote_average"],
       originalTitle: json["original_title"],
     );
   }

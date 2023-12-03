@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     trendingMovies = MovieApi().getTrendingMovies();
     topRated = MovieApi().getTopratedMovies();
-    topRated = MovieApi().getUpcomingMovies();
+    upcoming = MovieApi().getUpcomingMovies();
   }
 
   @override

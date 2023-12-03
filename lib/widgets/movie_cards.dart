@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:tmdb_app/constants/constants.dart';
+import 'package:tmdb_app/screens/details_screen.dart';
 
 class MovieCards extends StatelessWidget {
   const MovieCards({super.key, required this.snapshot});
@@ -17,15 +18,27 @@ class MovieCards extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Container(
-                height: 100,
-                width: 200,
-                child: Image.network(
-                  '${Constants.imagePath}${snapshot.data[index].posterPath}',
-                  filterQuality: FilterQuality.high,
-                  fit: BoxFit.cover,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailsScreen(
+                      movie: snapshot.data[index],
+                    ),
+                  ),
+                );
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  height: 100,
+                  width: 200,
+                  child: Image.network(
+                    '${Constants.imagePath}${snapshot.data[index].posterPath}',
+                    filterQuality: FilterQuality.high,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
