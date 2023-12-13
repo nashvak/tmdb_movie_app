@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tmdb_app/colors/colors.dart';
+import 'package:tmdb_app/constants/colors.dart';
 import 'package:tmdb_app/screens/homescreen.dart';
 
 void main() {

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmdb_app/api_class/api.dart';
 import 'package:tmdb_app/models/movie_model.dart';
+import 'package:tmdb_app/screens/details_screen.dart';
+import 'package:tmdb_app/screens/search_screen.dart';
 import 'package:tmdb_app/widgets/carousel.dart';
 import 'package:tmdb_app/widgets/movie_cards.dart';
 
@@ -36,6 +38,26 @@ class _HomeScreenState extends State<HomeScreen> {
           filterQuality: FilterQuality.high,
           height: 40,
         ),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SearchScreen(),
+                ),
+              );
+            },
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: Icon(
+                Icons.search,
+                color: Colors.white,
+                size: 30,
+              ),
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -44,6 +66,10 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // SearchbarRow(),
+              const SizedBox(
+                height: 20,
+              ),
               Text(
                 'Trending movies',
                 style: GoogleFonts.aBeeZee(fontSize: 25),
@@ -66,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         snapshot: snapshot,
                       );
                     } else {
-                      return Center(child: CircularProgressIndicator());
+                      return const Center(child: CircularProgressIndicator());
                     }
                   },
                 ),
@@ -96,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       snapshot: snapshot,
                     );
                   } else {
-                    return Center(child: CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   }
                 },
               )),
@@ -122,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       snapshot: snapshot,
                     );
                   } else {
-                    return Center(child: CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   }
                 },
               )),

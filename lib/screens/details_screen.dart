@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tmdb_app/colors/colors.dart';
+import 'package:tmdb_app/constants/colors.dart';
 import 'package:tmdb_app/constants/constants.dart';
 import 'package:tmdb_app/models/movie_model.dart';
 
@@ -35,11 +35,11 @@ class DetailsScreen extends StatelessWidget {
               floating: true,
               backgroundColor: Appcolors.scaffoldBgColor,
               flexibleSpace: FlexibleSpaceBar(
-                title: Text(
-                  movie.title.toString(),
-                  style: GoogleFonts.belleza(
-                      fontSize: 17, fontWeight: FontWeight.w500),
-                ),
+                // title: Text(
+                //   movie.title.toString(),
+                //   style: GoogleFonts.belleza(
+                //       fontSize: 17, fontWeight: FontWeight.w500),
+                // ),
                 background: ClipRRect(
                   borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(24),
@@ -55,7 +55,7 @@ class DetailsScreen extends StatelessWidget {
             ),
             SliverToBoxAdapter(
               child: Padding(
-                padding: EdgeInsets.all(12),
+                padding: const EdgeInsets.all(12),
                 child: Column(
                   children: [
                     Text(
@@ -63,7 +63,7 @@ class DetailsScreen extends StatelessWidget {
                       style: GoogleFonts.openSans(
                           fontSize: 30, fontWeight: FontWeight.w800),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Text(
@@ -71,7 +71,7 @@ class DetailsScreen extends StatelessWidget {
                       style: GoogleFonts.roboto(
                           fontSize: 15, fontWeight: FontWeight.w400),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     SizedBox(
@@ -79,7 +79,7 @@ class DetailsScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            padding: EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey),
                               borderRadius: BorderRadius.circular(10),
@@ -91,7 +91,7 @@ class DetailsScreen extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey),
                               borderRadius: BorderRadius.circular(10),
@@ -104,7 +104,7 @@ class DetailsScreen extends StatelessWidget {
                                       fontSize: 15,
                                       fontWeight: FontWeight.w400),
                                 ),
-                                Icon(
+                                const Icon(
                                   Icons.star,
                                   color: Appcolors.ratingColor,
                                 ),

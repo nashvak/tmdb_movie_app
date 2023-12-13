@@ -31,9 +31,9 @@ class MovieCards extends StatelessWidget {
               },
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Container(
-                  height: 100,
-                  width: 200,
+                child: SizedBox(
+                  height: 90,
+                  width: 150,
                   child: Image.network(
                     '${Constants.imagePath}${snapshot.data[index].posterPath}',
                     filterQuality: FilterQuality.high,
