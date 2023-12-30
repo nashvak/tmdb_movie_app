@@ -84,7 +84,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tmdb_app/screens/search/search_idle.dart';
-import 'package:tmdb_app/screens/search/searchbar.dart';
+import 'package:tmdb_app/screens/search/search_result.dart';
+import 'package:tmdb_app/screens/search/widgets/searchbar.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -111,7 +112,8 @@ class SearchScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Expanded(child: ScreenAfterSearch()),
+            // Expanded(child: ScreenAfterSearch()),
+            Expanded(child: SearchResultWidger())
           ],
         ),
       )),
