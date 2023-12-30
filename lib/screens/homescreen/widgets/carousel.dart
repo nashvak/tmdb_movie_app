@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:tmdb_app/constants/constants.dart';
-import 'package:tmdb_app/screens/details_screen.dart';
+import 'package:tmdb_app/screens/view_movie_details/details_screen.dart';
 
 class CarouselImages extends StatelessWidget {
   const CarouselImages({

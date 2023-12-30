@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tmdb_app/api_class/api.dart';
 import 'package:tmdb_app/models/movie_model.dart';
-import 'package:tmdb_app/screens/details_screen.dart';
-import 'package:tmdb_app/screens/search_screen.dart';
-import 'package:tmdb_app/widgets/carousel.dart';
-import 'package:tmdb_app/widgets/movie_cards.dart';
+import 'package:tmdb_app/screens/search/search_screen.dart';
+import 'package:tmdb_app/screens/homescreen/widgets/carousel.dart';
+import 'package:tmdb_app/screens/homescreen/widgets/movie_cards.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -44,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => SearchScreen(),
+                  builder: (context) => const SearchScreen(),
                 ),
               );
             },

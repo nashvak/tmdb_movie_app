@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tmdb_app/constants/colors.dart';
-import 'package:tmdb_app/screens/homescreen.dart';
+import 'package:tmdb_app/screens/homescreen/homescreen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

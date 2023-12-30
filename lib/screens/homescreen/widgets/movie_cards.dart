@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:tmdb_app/constants/constants.dart';
-import 'package:tmdb_app/screens/details_screen.dart';
+import 'package:tmdb_app/screens/view_movie_details/details_screen.dart';
 
 class MovieCards extends StatelessWidget {
   const MovieCards({super.key, required this.snapshot});
