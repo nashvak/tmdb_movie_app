@@ -37,26 +37,26 @@ class _HomeScreenState extends State<HomeScreen> {
           filterQuality: FilterQuality.high,
           height: 40,
         ),
-        actions: [
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const SearchScreen(),
-                ),
-              );
-            },
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Icon(
-                Icons.search,
-                color: Colors.white,
-                size: 30,
-              ),
-            ),
-          ),
-        ],
+        // actions: [
+        //   GestureDetector(
+        //     onTap: () {
+        //       Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //           builder: (context) => const SearchScreen(),
+        //         ),
+        //       );
+        //     },
+        //     child: const Padding(
+        //       padding: EdgeInsets.symmetric(horizontal: 10),
+        //       child: Icon(
+        //         Icons.search,
+        //         color: Colors.white,
+        //         size: 30,
+        //       ),
+        //     ),
+        //   ),
+        // ],
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),

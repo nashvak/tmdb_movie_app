@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tmdb_app/constants/colors.dart';
+import 'package:tmdb_app/screens/homescreen/bottom_navigation.dart';
 import 'package:tmdb_app/screens/homescreen/homescreen.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Appcolors.scaffoldBgColor,
       ),
-      home: const HomeScreen(),
+      home: const BottomNavigation(),
     );
   }
 }
